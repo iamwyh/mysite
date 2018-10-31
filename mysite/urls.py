@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
-from mysite.view import hello,current_datetime,hours_ahead,test_model
+from mysite.view import hello,current_datetime,hours_ahead,test_model,index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,4 +23,5 @@ urlpatterns = [
     path('time/', current_datetime),
     re_path(r'^time/plus/(\d{1,2})/$',hours_ahead),
     path('test_model/', test_model),
+    re_path(r'^$',index),
 ]
